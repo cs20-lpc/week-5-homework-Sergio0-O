@@ -1,4 +1,6 @@
+
 #include <iostream>
+using namespace std;
 
 struct Node {
     int val;
@@ -56,7 +58,7 @@ int main() {
 
     // --- Test 1: List with NO cycle ---
     Node* head1 = createList(N);
-      std::cout <<  (hasCycle(head1) ? "true " : "false ");
+      cout <<  (hasCycle(head1) ? "true " : "false ");
     // clean up
     deleteList(head1);
 
@@ -70,10 +72,10 @@ int main() {
     if (tail) {
         tail->next = linkNode; // create cycle
      } else {
-        std::cout << "Test 2 - Unexpected: tail is null.\n";
+        cout << "Test 2 - Unexpected: tail is null.\n";
     }
 
-    std::cout << (hasCycle(head2) ? "true" : "false") << "\n";
+    cout << (hasCycle(head2) ? "true" : "false") << "\n";
 
     // Break the cycle (so we can delete safely)
     if (tail) tail->next = nullptr;
